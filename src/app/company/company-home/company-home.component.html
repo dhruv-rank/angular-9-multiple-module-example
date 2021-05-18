@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<button [routerLink]="['detail']" style="margin-bottom: 10px;">Compnay Details </button>
+
+<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value)">
+    <input type="text" name="emailid" placeholder="emailid" ngModel>
+    <br />
+    <input type="password" name="passwd" placeholder="passwd" ngModel>
+    <br />
+    <input type="submit" value="submit">
+</form>
+<app-footer></app-footer>
