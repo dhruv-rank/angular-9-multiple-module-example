@@ -1,5 +1,5 @@
 <div class="header">
-    <h1>Header</h1>
-    <p>My supercool header</p>
-  </div>
-  
+  <h1>Master Business</h1>
+  <button class="btn btn-light w-50" *ngIf="!loginService.userLoginStatus()" (click)="login()">Login</button>
+  <button class="btn btn-light w-50" *ngIf="loginService.userLoginStatus()" (click)="logout()">Logout</button>
+</div>

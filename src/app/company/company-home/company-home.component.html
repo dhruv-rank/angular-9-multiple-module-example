@@ -1,12 +1,22 @@
 <app-header></app-header>
 
-<button [routerLink]="['detail']" style="margin-bottom: 10px;">Compnay Details </button>
 
-<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value)">
-    <input type="text" name="emailid" placeholder="emailid" ngModel>
-    <br />
-    <input type="password" name="passwd" placeholder="passwd" ngModel>
-    <br />
-    <input type="submit" value="submit">
+<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value) " class="row">
+    <div class="col-4 ">
+        <input  class="w-100 m-2" type="text" name="title" required placeholder="title" ngModel>
+        <br />
+    </div>
+    <div class="col-4">
+        <input  class="w-100 m-2" type="text" name="description" required placeholder="description" ngModel>
+        <br />
+    </div>
+    <div class="col-4">
+        <input class="btn btn-outline-success" type="submit" value="Add Company">
+    </div>
 </form>
+
+<div *ngFor="let item of compantList">
+    <app-company-list [company]="item"></app-company-list>
+</div>
+
 <app-footer></app-footer>

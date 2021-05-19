@@ -1,5 +1,10 @@
-<app-header></app-header>
-
-<p>company-detail works!</p>
-
-<app-footer></app-footer>
+<div class="card text-center">
+    <div class="card-header">
+     Company Details !!
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{company.title}}</h5>
+      <p class="card-text">{{company.description}}</p>
+      <a href="javascript:;" [routerLink]="['/cmp']"  class="btn btn-outline-dark">Go To List</a>
+    </div>
+  </div>    

@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonService } from 'src/app/common.service';
+import { Company } from '../company.model';
+import { CompanyService } from '../company.service';
+import { getLocaleFirstDayOfWeek } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-company-home',
@@ -10,11 +14,20 @@ export class CompanyHomeComponent implements OnInit {
 
   todaydate;
   componentproperty;
-  constructor(private commonService: CommonService) { }
+
+  @ViewChild('userlogin') userlogin: NgForm;
+
+  compantList: Company[];
+
+  constructor(private commonService: CommonService, private companyService: CompanyService) { }
   ngOnInit() {
-     this.todaydate = this.commonService.showTodayDate();
+    this.todaydate = this.commonService.showTodayDate();
+    this.compantList = this.companyService.getCompanyList();
   }
   onClickSubmit(data) {
-     alert("Entered Email id : " + data.emailid);
+    if (this.userlogin.valid) {
+      this.companyService.addCompany(data);
+    }
+
   }
 }
