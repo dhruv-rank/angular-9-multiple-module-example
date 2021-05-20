@@ -6,8 +6,6 @@ Multiple modules are very ***worthwhile*** when you have a massive product to wo
 
 
 
-
-
 ### 1. Topics Covered
 
 - Multiple modules
@@ -94,7 +92,7 @@ RouterModule.forRoot(routes, { preloadingStrategy: CustomLoadModuleStrategyServi
 
 ```
 git clone https://github.com/dhruv-rank/angular-9-multiple-module-example.git
-cd angular-2-multiple-module-sample-project
+cd angular-9-multiple-module-example
 npm install
 ```
 
