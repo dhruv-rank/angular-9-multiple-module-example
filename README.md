@@ -1,28 +1,68 @@
-# AngularMultipleModuleExample
+# Angular Multiple Module Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+This is the application for how to manage multiple modules in angular projects.\
+A simple way to create multiple modules is to `divide your application into major features` first and create separate modules for each major feature.
+Multiple modules are very ***worthwhile*** when you have a massive product to work on. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Topics Covered
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Multiple modules
+- Defining routes including child routes and lazy-loaded routes
+- Custom pre-loading strategy
+- Custom pipe
+- Auth-guard
+- Ngb-Modal
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Steps To Clone It
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+git clone https://github.com/dhruv-rank/angular-9-multiple-module-example.git
+cd angular-2-multiple-module-sample-project
+npm install
+ng serve
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# angular-9-multiple-module-example
+
+## Extra Dependency
+
+> bootstrap : "^5.0.1"\
+> @ng-bootstrap/ng-bootstrap : "^9.1.1"
+ 
+
+## Pre Loaded  Module
+
+
+![Preloaded module screenshot](./src/assets/pre-laoded-module.png)
+
+
+
+## Lazy Loaded Module
+
+
+ ![Preloaded module screenshot](./src/assets/lazy-loaded-module.png)
+
+
+## Purpose Of Every Module
+
+1. Employee Module
+    - Employee is the ***major feature*** of this application.
+
+2. Company Module
+    - Company is the ***major feature*** of this application.
+
+3. Shared Module
+    - Components, directives, and pipes that are `used in multiple different modules` are declared and exported from a shared module.
+
+4. Core Module
+    - Modules that are **used in whole application** and services that need **single instance for whole application** are provided in the core module.
+    - Core module needs to be imported only once and in the `App module`.
+    
+5. Login Module
+    - I have added login related services and guards into this module(this module is _not mandatory_ for every application)
