@@ -1,16 +1,16 @@
 <div class="modal-header">
-    <h4 class="modal-title">Add Employee!</h4>
+    <h4 class="modal-title">Add Employee</h4>
     <button type="button" class="btn btn-outline-dark close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     &times;
     </button>
 </div>
-<div class="modal-body">
-    <div class="row ">
+<div class="modal-body ">
+    <div class="row px-3">
         <label for="name">Name</label>
         <input class=" w-100 my-2 form-control" [(ngModel)]="name" type="text" required placeholder="name">
         <br />
     </div>
-    <div class="row form-group ">
+    <div class="row form-group  px-3">
         <label for="position">Position</label>
         <select name="position" [(ngModel)]="position" class="form-select my-2">
             <option [value]="item" *ngFor="let item of positionList" [selected]="item == position">
