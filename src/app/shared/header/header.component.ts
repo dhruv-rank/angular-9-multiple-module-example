@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from 'src/app/login/login.service';
 
 @Component({
@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public loginService: LoginService) { }
 
-
+  @Input() header: string;
   ngOnInit(): void {
     this.loginService.userLoginStatus();
   }

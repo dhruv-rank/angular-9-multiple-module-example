@@ -1,8 +1,16 @@
-<app-header></app-header>
-<div class="container">
-    <br>
-    <h1>{{currentDate}}</h1>
-    <br>
-    <button [routerLink]="['detail']" class="btn btn-outline-dark" >Employee Details </button>
+<app-header [header]="'Menage Employee'"></app-header>
+<div class="row p-3 justify-content-between">
+    <div class="col-6">
+        <input type="text" class="form-control" [(ngModel)]="searchEmployee" placeholder="Search For Employee">
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <button (click)="open()" class="btn green-color">Add Employee</button>
+    </div>
 </div>
+<div class="flex-row">
+    <div *ngFor="let item of employeeList | myFilter : searchEmployee">
+        <app-list-card [id]="item.id" [name]="item.name" [description]="item.position"></app-list-card>
+    </div>
+</div>
+
 <app-footer></app-footer>

@@ -10,8 +10,8 @@ export class CustomLoadModuleStrategyService implements PreloadingStrategy {
   constructor() { }
 
   preload(route: Route, fn: () => Observable<any>): Observable<any> {
-    if (route['path'] == 'cmp') {
-      alert('Company module is preloaded');
+    if (route['path'] == 'company') {
+      // alert('Company module is preloaded');
       return fn();      //return obaservable function if want to preload
     } else {
       // alert(`not possible for ${route['path']} `)

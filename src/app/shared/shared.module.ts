@@ -4,11 +4,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CommonComponent } from '../common/common.component';
+import { FilterPipe } from './filter.pipe';
+import { ListCardComponent } from '../common/list-card/list-card.component';
 
-const components = [HeaderComponent, FooterComponent,CommonComponent];  //reusable components, pipes, and directives ,that we are going to use in whole application
-
-
+const components = [HeaderComponent, FooterComponent,FilterPipe,ListCardComponent];  //reusable components, pipes, and directives ,that we are going to use in whole application
 
 @NgModule({
   declarations: [ ...components],
@@ -16,7 +15,7 @@ const components = [HeaderComponent, FooterComponent,CommonComponent];  //reusab
     CommonModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule         //In which feature of application we want these pre-built modules we can simply impport this module it in  that fearture's module
+    ReactiveFormsModule,         //In which feature of application we want these pre-built modules we can simply impport this module it in  that fearture's module
   ],
   exports: [
     FormsModule,

@@ -1,22 +1,15 @@
-<app-header></app-header>
-
-
-<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value) " class="row">
-    <div class="col-4 ">
-        <input  class="w-100 m-2" type="text" name="title" required placeholder="title" ngModel>
-        <br />
-    </div>
+<app-header [header]="'Menage Company'"></app-header>
+<div class="row p-3 justify-content-between">
     <div class="col-4">
-        <input  class="w-100 m-2" type="text" name="description" required placeholder="description" ngModel>
-        <br />
+        <input type="text" class="form-control" [(ngModel)]="searchCompany" placeholder="Search For Company">
     </div>
-    <div class="col-4">
-        <input class="btn btn-outline-success" type="submit" value="Add Company">
+    <div class="col-4  d-flex justify-content-end">
+        <button (click)="open()" class="btn green-color">Add Company</button>
     </div>
-</form>
+</div>
 
-<div *ngFor="let item of compantList">
-    <app-company-list [company]="item"></app-company-list>
+<div *ngFor="let item of compantList | myFilter : searchCompany">
+    <app-list-card [id]="item.id" [name]="item.title" [description]="item.description"></app-list-card>
 </div>
 
 <app-footer></app-footer>

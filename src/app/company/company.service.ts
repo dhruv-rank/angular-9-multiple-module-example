@@ -5,7 +5,6 @@ import { Company } from './company.model';
 @Injectable()
 export class CompanyService {
 
-
     private companyList: Company[] = [
         { id: 0, title: 'Unity', description: 'The best ever game development tool built' },
         { id: 1, title: 'EA Sport', description: 'Master of tom clancy' }

@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonService } from 'src/app/common.service';
 import { Company } from '../company.model';
 import { CompanyService } from '../company.service';
-import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { NgForm } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddCompanyComponent } from '../add-company/add-company.component';
 
 @Component({
   selector: 'app-company-home',
@@ -13,21 +14,20 @@ import { NgForm } from '@angular/forms';
 export class CompanyHomeComponent implements OnInit {
 
   todaydate;
-  componentproperty;
 
-  @ViewChild('userlogin') userlogin: NgForm;
-
+  @ViewChild('addCompany') addCompany: NgForm;
+  searchCompany:string;
   compantList: Company[];
 
-  constructor(private commonService: CommonService, private companyService: CompanyService) { }
+  constructor(private commonService: CommonService, private companyService: CompanyService,private modalService: NgbModal) { }
   ngOnInit() {
     this.todaydate = this.commonService.showTodayDate();
     this.compantList = this.companyService.getCompanyList();
   }
-  onClickSubmit(data) {
-    if (this.userlogin.valid) {
-      this.companyService.addCompany(data);
-    }
+  
 
+  open() {
+    const modalRef = this.modalService.open(AddCompanyComponent);
+    modalRef.componentInstance.companyService = this.companyService;
   }
 }

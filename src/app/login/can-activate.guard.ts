@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
 export class canActivateGuard implements CanActivate {
 
     constructor(private loginService: LoginService, private router: Router) { }
-
+//if user is logged in then move ahead else redirect to home
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
         if (this.loginService.userLoginStatus()) {
             return true;
         } else {
-            this.router.navigate(['/']);
+            this.router.navigate(['/']); 
             alert('Please Login First');
             return false;
         }

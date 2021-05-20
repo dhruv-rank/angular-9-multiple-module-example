@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyService } from './company.service';
 import { canActivateGuard } from '../login/can-activate.guard';
+import { AddCompanyComponent } from './add-company/add-company.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CompanyHomeComponent },
@@ -15,13 +16,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [CompanyHomeComponent, CompanyDetailComponent, CompanyListComponent],
+  declarations: [CompanyHomeComponent, CompanyDetailComponent, CompanyListComponent, AddCompanyComponent],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
-  providers: [CompanyService]
+  providers: [CompanyService]   //provide service for specific feature module
 })
 export class CompanyModule { }

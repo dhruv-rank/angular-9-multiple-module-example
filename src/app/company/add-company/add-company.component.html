@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Company!</h4>
+  <button type="button" class="close btn btn-outline-dark" aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')">
+    &times;
+  </button>
+</div>
+<div class="modal-body">
+  <form #addCompany="ngForm" (ngSubmit)="onClickSubmit(addCompany.value) " class="row">
+    <div class="row ">
+      <label for="title"> Title</label>
+      <input class="w-100 m-2 form-control" type="text" name="title" required placeholder="title" ngModel>
+      <br />
+    </div>
+    <div class="row">
+      <label for="description">Description</label>
+      <input class="w-100 m-2 form-control" type="text" name="description" required placeholder="description" ngModel>
+      <br />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <input class="btn m-2 btn-outline-success" type="submit" value="Add">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.dismiss('Close click')">Close</button>
+</div>
