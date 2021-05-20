@@ -5,8 +5,8 @@ import { Employee } from './employee.model.';
 export class EmployeeService {
 
     private employeeList: Employee[] = [
-        { id: 0, name: 'Venmerth', position: 'sr' },
-        { id: 1, name: 'Isabel', position: 'jr' }
+        { id: 0, name: 'Venmerth', position: 'Senior' },
+        { id: 1, name: 'Isabel', position: 'Junior' }
     ]
 
     constructor() { }

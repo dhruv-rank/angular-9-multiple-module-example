@@ -1,7 +1,11 @@
 <div class="card m-2">
-    <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <p class="card-text">{{description}}</p>
-        <a class="btn  green-color" [routerLink]="['detail', id]">Get Detail</a>
+    <div class="card-body row justify-content-between">
+        <div class="col-6">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{description}}</p>
+        </div>
+        <div class="col-1">
+            <a class="btn  ml-auto green-color" [routerLink]="['detail', id]">Get Detail</a>
+        </div>
     </div>
 </div>

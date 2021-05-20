@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Add Company!</h4>
+  <h4 class="modal-title">Add Company</h4>
   <button type="button" class="close btn btn-outline-dark" aria-label="Close"
     (click)="activeModal.dismiss('Cross click')">
     &times;
@@ -8,7 +8,7 @@
 <div class="modal-body">
   <form #addCompany="ngForm" (ngSubmit)="onClickSubmit(addCompany.value) " class="row">
     <div class="row ">
-      <label for="title"> Title</label>
+      <label for="title">Title</label>
       <input class="w-100 m-2 form-control" type="text" name="title" required placeholder="title" ngModel>
       <br />
     </div>
